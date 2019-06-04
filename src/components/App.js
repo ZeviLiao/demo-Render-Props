@@ -30,15 +30,17 @@ const PrimaryHeader = () => {
         <NavLink to="/demo2" activeClassName="active">demo2</NavLink> | &nbsp;
         <NavLink to="/demo3" activeClassName="active">demo3</NavLink>
       </nav>
-      <hr/>
+      <hr />
     </header>
   )
 }
 
 const App = () => (
-  <BrowserRouter>
-    <PrimaryLayout />
-  </BrowserRouter>
+  <div class="container">
+    <BrowserRouter>
+      <PrimaryLayout />
+    </BrowserRouter>
+  </div>
 )
 
 export default App
