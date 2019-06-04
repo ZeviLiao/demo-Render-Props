@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect, NavLink } from 'react-router-dom'
 import HomePage from './HomePage'
 import Demo1 from './Demo1'
 import Demo2 from './Demo2'
@@ -20,7 +20,20 @@ const PrimaryLayout = () => (
   </div>
 )
 
-const PrimaryHeader = () => <div>Header</div>
+const PrimaryHeader = () => {
+  return (
+    <header className="primary-header">
+      <h1>Welcome to our app!</h1>
+      <nav>
+        <NavLink to="/" exact activeClassName="active">Home</NavLink> | &nbsp;
+        <NavLink to="/demo1" activeClassName="active">demo1</NavLink> | &nbsp;
+        <NavLink to="/demo2" activeClassName="active">demo2</NavLink> | &nbsp;
+        <NavLink to="/demo3" activeClassName="active">demo3</NavLink>
+      </nav>
+      <hr/>
+    </header>
+  )
+}
 
 const App = () => (
   <BrowserRouter>
