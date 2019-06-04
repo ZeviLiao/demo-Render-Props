@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import HomePage from './HomePage'
-import About from './About'
+import Demo1 from './Demo1'
+import Demo2 from './Demo2'
+import Demo3 from './Demo3'
 
 const PrimaryLayout = () => (
   <div className="primary-layout">
@@ -9,21 +11,15 @@ const PrimaryLayout = () => (
     <main>
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/about" exact component={About} />
-        <Route path="/users/:userId" component={UserProfilePage} />
-        <Route path="/products" exact component={BrowseProductsPage} />
-        <Route path="/products/:productId" component={ProductProfilePage} />
+        <Route path="/demo1" exact component={Demo1} />
+        <Route path="/demo2" component={Demo2} />
+        <Route path="/demo3" exact component={Demo3} />
         <Redirect to="/" />
       </Switch>
     </main>
   </div>
 )
 
-// const HomePage = () => <div>Home Page</div>
-// const BrowseUsersPage = () => <div>Users Page</div>
-const UserProfilePage = () => <div>Users Page</div>
-const BrowseProductsPage = () => <div>Users Page</div>
-const ProductProfilePage = () => <div>UserAddPage</div>
 const PrimaryHeader = () => <div>Header</div>
 
 const App = () => (

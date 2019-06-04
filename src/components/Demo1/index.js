@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Toggle from './Toggle'
 // import { Taggle } from 'antd';
 
-export default class About extends Component {
+export default class Demo1 extends Component {
   render() {
     return (
       <div>
