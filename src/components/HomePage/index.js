@@ -6,28 +6,28 @@ import ModalContainer from "./ModalContainer";
 import { Button } from 'antd';
 
 class App extends React.Component {
-    state = {
-      visible: false
-    };
+    // state = {
+    //   visible: false
+    // };
   
-    handleShow = () => {
-      this.setState({ visible: true });
-    };
+    // handleShow = () => {
+    //   this.setState({ visible: true });
+    // };
   
-    handleHide = () => {
-      this.setState({ visible: false });
-    };
+    // handleHide = () => {
+    //   this.setState({ visible: false });
+    // };
   
     render() {
-      const { visible } = this.state;
+      // const { visible } = this.state;
       return (
         <div style={{ margin: 10 }}>
-          <div style={{ marginBottom: 10 }}>
+          {/* <div style={{ marginBottom: 10 }}>
             <HelloModal visible={visible} handleHide={this.handleHide} />
             <Button type="primary" onClick={this.handleShow}>
               Click me!
             </Button>
-          </div>
+          </div> */}
         
             <ModalContainer>
               {modal => (

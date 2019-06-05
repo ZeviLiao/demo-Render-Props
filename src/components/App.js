@@ -4,6 +4,7 @@ import HomePage from './HomePage'
 import Demo1 from './Demo1'
 import Demo2 from './Demo2'
 import Demo3 from './Demo3'
+import Demo4 from './Demo4'
 
 const PrimaryLayout = () => (
   <div className="primary-layout">
@@ -14,6 +15,7 @@ const PrimaryLayout = () => (
         <Route path="/demo1" exact component={Demo1} />
         <Route path="/demo2" component={Demo2} />
         <Route path="/demo3" exact component={Demo3} />
+        <Route path="/demo4" exact component={Demo4} />
         <Redirect to="/" />
       </Switch>
     </main>
@@ -28,7 +30,8 @@ const PrimaryHeader = () => {
         <NavLink to="/" exact activeClassName="active">Home</NavLink> | &nbsp;
         <NavLink to="/demo1" activeClassName="active">demo1</NavLink> | &nbsp;
         <NavLink to="/demo2" activeClassName="active">demo2</NavLink> | &nbsp;
-        <NavLink to="/demo3" activeClassName="active">demo3</NavLink>
+        <NavLink to="/demo3" activeClassName="active">demo3</NavLink> | &nbsp;
+        <NavLink to="/demo4" activeClassName="active">demo4</NavLink>
       </nav>
       <hr />
     </header>

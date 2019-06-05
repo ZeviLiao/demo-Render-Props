@@ -1,35 +1,64 @@
 import React from 'react';
 import { Button, Modal } from "antd";
 
-const HelloModal = ({ visible, handleHide }) => (
-  <Modal visible={visible} title="Hello" onOk={handleHide} onCancel={handleHide}>
-    World!
-  </Modal>
-);
+const HelloModal = ({ title, children, visible, handleHide }) => {
+  return (
+    <Modal visible={visible} title={title}
+      onOk={handleHide}
+      onCancel={handleHide}>
+      {children}
+    </Modal>
+  )
+}
 
-class Demo3 extends React.Component {
+class Demo31 extends React.Component {
   state = {
     visible: false
   };
 
-  handleShow = () => {
+  show = () => {
     this.setState({ visible: true });
   };
 
-  handleHide = () => {
+  hide = () => {
     this.setState({ visible: false });
   };
 
   render() {
     const { visible } = this.state;
+    const { children } = this.props;
+    return children({
+      visible,
+      show: this.show,
+      hide: this.hide
+    })
+
+  }
+}
+
+class Demo3 extends React.Component {
+  render() {
+
     return (
       <div>
-        <HelloModal visible={visible} handleHide={this.handleHide} />
-        <Button type="primary" onClick={this.handleShow}>
-          Click me!
-        </Button>
+        <Demo31>
+          {(modal) => (
+            <div>
+              <HelloModal visible={modal.visible} title="abc"
+                handleHide={modal.hide}
+              >
+                def!
+            </HelloModal>
+              <Button type="primary" onClick={modal.show}>
+                Click me!
+            </Button>
+            </div>
+          )}
+        </Demo31>
       </div>
-    );
+
+
+    )
   }
 }
 
